@@ -30,7 +30,7 @@ function Play(){
 function iluminateSequence(i) {
     
     var value = arraySequence[i];
-
+    
     switch(value){
         case 0:
             red.classList.add('ligth');
@@ -97,7 +97,7 @@ function rulesGame(ev) {
         sublevel++
         band = 1;
     } else{
-        alert('Perdió');
+        alert('Perdiste :(')
         location.reload();
     }
     //band is to control wich code is running and wich not

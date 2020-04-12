@@ -64,7 +64,7 @@ body{
                 box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
             }
 .Footer_container{
-    margin-top: 245px;
+    margin-top: 235px;
     background-color: #363636;
     color: white;
     border-radius: 5px;
@@ -101,5 +101,74 @@ body{
 }
 
 .More_margin{
-    margin-top: 325px;
+    margin-top: 315px;
+}
+
+@media screen and (max-width: 1024px){
+    .Colors{
+        margin: 0 30%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .Colors{
+        margin: 0 23%;
+    }
+}
+@media screen and (max-width: 425px){
+        
+    .Gameboard{
+        justify-content: center;
+        margin: 0 1%;
+    }
+        .Colors{
+            margin: 0;
+            
+        }
+        .Social a{
+            border: none;
+        }
+}
+
+@media screen and (max-width: 375px){
+    
+    body{
+        width: 375px;
+    }
+        .Gameboard{
+            width: 100%;
+        }
+        .Colors{
+            margin: 0 -2.7%;
+        }
+        .Social a{
+            border: none;
+        }
+}
+
+@media screen and (max-width: 320px){
+    h1{
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 19px;
+    }
+    body{
+        margin: 0;
+    }
+    .Gameboard{
+        margin: 0;
+    }
+    .Colors{
+        margin: 0 0;
+    }
+    .Button{
+        margin-left: 15px;
+    }
+    .Footer{
+        font-size: 15px;
+    }
+    .Social a{
+        border: none;
+        margin: 5px;
+    }
 }
