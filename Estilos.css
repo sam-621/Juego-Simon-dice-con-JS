@@ -1,0 +1,101 @@
+body{
+    background-color: #000839;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+    h1{
+        color: white;
+        text-align: center;
+    }
+    .Gameboard{
+        justify-content: center;
+        margin-top: 50px;
+    }
+        .Colors{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 400px;
+            height: 400px;
+            margin: 0 35%;
+        }
+            .Colors div{
+                width: 198px;
+                height: 198px;
+                border: 1px solid white;
+            }
+                .RedColor{
+                    border-top-left-radius: 200px;
+                    background-color: #eb4559;
+                }
+                    .RedColor.ligth{
+                        background-color: #f0808d;
+                    }
+                .BlueColor{
+                    border-top-right-radius: 200px;
+                    background-color: #00bcd4;
+                }
+                    .BlueColor.ligth{
+                        background-color: #8fdae4;
+                    }
+                .GreenColor{
+                    border-bottom-left-radius: 200px;
+                    background-color: #21bf73;
+                }
+                    .GreenColor.ligth{
+                        background-color: #7cddae;
+                    }
+                .PurpleColor{
+                    border-bottom-right-radius: 200px;
+                    background-color: #be79df;
+                }
+                    .PurpleColor.ligth{
+                        background-color: #d9adee;
+                    }
+        .Button{
+            text-align: center;
+            margin-top: -240px;
+        }
+            .Button button{
+                font-family: 'Montserrat', sans-serif;
+                font-size: 30px;
+                width: 250px;
+                height: 80px;
+                border: none;
+                box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+            }
+.Footer_container{
+    margin-top: 245px;
+    background-color: #363636;
+    color: white;
+}
+    .Footer{
+        display: flex;
+        justify-content: space-between;
+    }
+        .My_name{
+            margin-left: 5px;
+            padding: 5px;
+        }
+            .My_name a{
+                text-decoration: none;
+                color: white;
+            }
+        .Social{
+            margin-top: 23px;
+            margin-right: 5px;
+        }
+            .Social a {
+                width: 50px;
+                height: 50px;
+                margin: 10px;
+                padding: 10px;
+                border: 1px solid white;
+                border-radius: 50px;
+                text-decoration: none;
+                color: white;
+            }
+
+.hide{
+    display: none;
+}
