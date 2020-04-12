@@ -1,7 +1,6 @@
 body{
     background-color: #000839;
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
 }
     h1{
         color: white;
@@ -29,28 +28,28 @@ body{
                     background-color: #eb4559;
                 }
                     .RedColor.ligth{
-                        background-color: #f0808d;
+                        background-color: #ecb3ba;
                     }
                 .BlueColor{
                     border-top-right-radius: 200px;
                     background-color: #00bcd4;
                 }
                     .BlueColor.ligth{
-                        background-color: #8fdae4;
+                        background-color: #cbe7eb;
                     }
                 .GreenColor{
                     border-bottom-left-radius: 200px;
                     background-color: #21bf73;
                 }
                     .GreenColor.ligth{
-                        background-color: #7cddae;
+                        background-color: #c7ebda;
                     }
                 .PurpleColor{
                     border-bottom-right-radius: 200px;
                     background-color: #be79df;
                 }
                     .PurpleColor.ligth{
-                        background-color: #d9adee;
+                        background-color: #e1d7e6;
                     }
         .Button{
             text-align: center;
@@ -68,6 +67,7 @@ body{
     margin-top: 245px;
     background-color: #363636;
     color: white;
+    border-radius: 5px;
 }
     .Footer{
         display: flex;
@@ -98,4 +98,8 @@ body{
 
 .hide{
     display: none;
+}
+
+.More_margin{
+    margin-top: 325px;
 }
