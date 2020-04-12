@@ -106,7 +106,7 @@ function rulesGame(ev) {
         if(sublevel === level){
             level++
             if(level === maxLevel + 1){
-                alert('Usted ha ganado tome un ss y mándemelo');
+                alert('Ganaste!!! toma una ss y compartela');
                 location.reload();
             } else{
                 //When you pass to the next level this happens
@@ -117,7 +117,6 @@ function rulesGame(ev) {
                         setTimeout(() => iluminateSequence(i), 1000 * i);
                     }
                 }, 1000);
-                h1.innerHTML = 'Nivel: ' + level;
             }
         }
     }
