@@ -30,7 +30,7 @@ function Play(){
 function iluminateSequence(i) {
     
     var value = arraySequence[i];
-    
+
     switch(value){
         case 0:
             red.classList.add('ligth');
@@ -97,7 +97,7 @@ function rulesGame(ev) {
         sublevel++
         band = 1;
     } else{
-        alert('Perdiste :(')
+        alert('Perdió :(');
         location.reload();
     }
     //band is to control wich code is running and wich not
@@ -106,7 +106,7 @@ function rulesGame(ev) {
         if(sublevel === level){
             level++
             if(level === maxLevel + 1){
-                alert('Ganaste!!! toma una ss y compartela');
+                alert('Has ganado!!! toma un ss y compártelo');
                 location.reload();
             } else{
                 //When you pass to the next level this happens
@@ -117,6 +117,7 @@ function rulesGame(ev) {
                         setTimeout(() => iluminateSequence(i), 1000 * i);
                     }
                 }, 1000);
+                h1.innerHTML = 'Nivel: ' + level;
             }
         }
     }
