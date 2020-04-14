@@ -1,9 +1,9 @@
-const button = document.getElementById('button_start');
+var button = document.getElementById('button_start');
+var button_container = document.getElementById('btn_container');
 const red = document.getElementById('red');
 const blue = document.getElementById('blue');
 const green = document.getElementById('green');
 const purple = document.getElementById('purple');
-const footer = document.getElementById('footer');
 var h1 = document.getElementById('h1');
 var maxLevel = 10;
 var level = 1;
@@ -14,8 +14,10 @@ var band;
 //principal function
 function Play(){
 
-    button.classList.add('hide');
-    footer.classList.add('More_margin');
+    button_container.classList.remove('Button_container');
+    var father = button.parentNode;
+    father.removeChild(button);
+    button_container.classList.add('hide');
     h1.innerHTML = 'Nivel: ' + level;
     arraySequence = new Array(maxLevel).fill(0).map(sequence => Math.floor(Math.random() * 4));
     

@@ -1,174 +1,120 @@
 body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
     background-color: #000839;
+    color: white;
     font-family: 'Montserrat', sans-serif;
 }
-    h1{
-        color: white;
-        text-align: center;
+
+    .Container{
+        display: grid;
+        grid-template-areas: "header"
+                             "gameboard"
+                             "footer";
+        grid-template-rows: 100px 477px 80px;
     }
-    .Gameboard{
-        justify-content: center;
-        margin-top: 50px;
-    }
-        .Colors{
-            display: flex;
+
+        .Header{
+            grid-area: header;
+            display: grid;
+            justify-items: center;
+            align-items: center;
+        }
+            .Header h1{
+                margin: 0;
+                justify-items: center;
+            }
+        .Gameboard{
+            grid-area: gameboard;
+            display: grid;
+            grid-template-areas: "a b"
+                                 "c d";
+            grid-template-columns: repeat(4, 120px);
             justify-content: center;
-            flex-wrap: wrap;
-            width: 400px;
-            height: 400px;
-            margin: 0 35%;
+            
         }
-            .Colors div{
-                width: 198px;
-                height: 198px;
+            .RedColor{
+                grid-area: a;
+                grid-column: 1 / 3;
                 border: 1px solid white;
+                border-top-left-radius: 400px;
+                background-color: #eb4559;
             }
-                .RedColor{
-                    border-top-left-radius: 200px;
-                    background-color: #eb4559;
+                .RedColor.ligth{
+                    background-color: #ecb3ba;
                 }
-                    .RedColor.ligth{
-                        background-color: #ecb3ba;
-                    }
-                .BlueColor{
-                    border-top-right-radius: 200px;
-                    background-color: #00bcd4;
-                }
-                    .BlueColor.ligth{
-                        background-color: #cbe7eb;
-                    }
-                .GreenColor{
-                    border-bottom-left-radius: 200px;
-                    background-color: #21bf73;
-                }
-                    .GreenColor.ligth{
-                        background-color: #c7ebda;
-                    }
-                .PurpleColor{
-                    border-bottom-right-radius: 200px;
-                    background-color: #be79df;
-                }
-                    .PurpleColor.ligth{
-                        background-color: #e1d7e6;
-                    }
-        .Button{
-            text-align: center;
-            margin-top: -240px;
-        }
-            .Button button{
-                font-family: 'Montserrat', sans-serif;
-                font-size: 30px;
-                width: 250px;
-                height: 80px;
-                border: none;
-                box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+            .BlueColor{
+                grid-area: b;
+                grid-column: 3 / 5;
+                border: 1px solid white;
+                border-top-right-radius: 400px;
+                background-color: #00bcd4;
             }
-.Footer_container{
-    margin-top: 235px;
-    background-color: #363636;
-    color: white;
-    border-radius: 5px;
-}
-    .Footer{
-        display: flex;
-        justify-content: space-between;
-    }
-        .My_name{
-            margin-left: 5px;
-            padding: 5px;
+                .BlueColor.ligth{
+                    background-color: #cbe7eb;
+                }
+            .GreenColor{
+                grid-area: c;
+                grid-column: 1 / 3;
+                border: 1px solid white;
+                border-bottom-left-radius: 400px;
+                background-color: #21bf73;
+            }
+                .GreenColor.ligth{
+                    background-color: #c7ebda;
+                }
+            .PurpleColor{
+                grid-area: d;
+                grid-column: 3 / 5;
+                border: 1px solid white;
+                border-bottom-right-radius: 400px;
+                background-color: #be79df;
+            }
+                .PurpleColor.ligth{
+                    background-color: #e1d7e6;
+                }
+            .Button_container{
+                display: grid;
+                grid-column: 2 / 4;
+                grid-row: 1 / 3;
+                align-items: center;
+            }    
+                .Button{
+                    height: 80px;
+                    border: none;
+                    box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.75);
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 25px;
+                }
+        .Footer{
+            grid-area: footer;
+            display: grid;
+            grid-template: 1fr 1fr / 1fr 1fr;
+            align-items: center;
+            background-color: #363636;
         }
-            .My_name a{
+            .Footer p{
+                grid-row: 1 / 3;
+            }
+            .Footer a{
                 text-decoration: none;
                 color: white;
             }
-        .Social{
-            margin-top: 23px;
-            margin-right: 5px;
-        }
-            .Social a {
-                width: 50px;
-                height: 50px;
-                margin: 10px;
-                padding: 10px;
-                border: 1px solid white;
-                border-radius: 50px;
-                text-decoration: none;
-                color: white;
+            .Icons{
+                display: flex;
+                justify-content: center;
+                margin-top: 15px;
             }
+                .Icons a{
+                    margin-right: 20px;
+                    color: white;
+                    font-size: 20px;
+                    padding: 10px;
+                    border: 1px solid white;
+                    border-radius: 30px;
+                }
 
 .hide{
     display: none;
-}
-
-.More_margin{
-    margin-top: 315px;
-}
-
-@media screen and (max-width: 1024px){
-    .Colors{
-        margin: 0 30%;
-    }
-}
-
-@media screen and (max-width: 768px){
-    .Colors{
-        margin: 0 23%;
-    }
-}
-@media screen and (max-width: 425px){
-        
-    .Gameboard{
-        justify-content: center;
-        margin: 0 1%;
-    }
-        .Colors{
-            margin: 0;
-            
-        }
-        .Social a{
-            border: none;
-        }
-}
-
-@media screen and (max-width: 375px){
-    
-    body{
-        width: 375px;
-    }
-        .Gameboard{
-            width: 100%;
-        }
-        .Colors{
-            margin: 0 -2.7%;
-        }
-        .Social a{
-            border: none;
-        }
-}
-
-@media screen and (max-width: 320px){
-    h1{
-        font-size: 18px;
-        text-align: center;
-        margin-bottom: 19px;
-    }
-    body{
-        margin: 0;
-    }
-    .Gameboard{
-        margin: 0;
-    }
-    .Colors{
-        margin: 0 0;
-    }
-    .Button{
-        margin-left: 15px;
-    }
-    .Footer{
-        font-size: 15px;
-    }
-    .Social a{
-        border: none;
-        margin: 5px;
-    }
 }
