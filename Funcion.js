@@ -15,12 +15,12 @@ var band;
 var status = 0;
 
 function easyMode(){
-    window.status = 1;
+    status = 1;
     h1.innerHTML = 'Fácil';
 }
 
 function hardMode(){
-    window.status = 2;
+    status = 2;
     h1.innerHTML = 'Difícil';
 }
 
