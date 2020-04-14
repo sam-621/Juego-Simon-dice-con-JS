@@ -16,7 +16,7 @@ var status = 0;
 
 function easyMode(){
     window.status = 1;
-    h1.innerHTML = 'Facil';
+    h1.innerHTML = 'Fácil';
 }
 
 function hardMode(){
