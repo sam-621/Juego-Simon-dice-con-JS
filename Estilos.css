@@ -25,6 +25,16 @@ body{
                 margin: 0;
                 justify-items: center;
             }
+            .Easy{
+                border: none;
+                width: 120px;
+                background-color: #a7e9af;
+            }
+            .Hard{
+                border: none;
+                width: 120px;
+                background-color: #dd2c00;
+            }
         .Gameboard{
             grid-area: gameboard;
             display: grid;

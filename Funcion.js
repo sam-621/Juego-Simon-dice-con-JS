@@ -1,5 +1,7 @@
-var button = document.getElementById('button_start');
-var button_container = document.getElementById('btn_container');
+const button = document.getElementById('button_start');
+const button_container = document.getElementById('btn_container');
+const button_easy = document.getElementById('button_easy');
+const button_hard = document.getElementById('button_hard');
 const red = document.getElementById('red');
 const blue = document.getElementById('blue');
 const green = document.getElementById('green');
@@ -10,24 +12,58 @@ var level = 1;
 var arraySequence;
 var sublevel = 0;
 var band;
+var status = 0;
+
+function easyMode(){
+    window.status = 1;
+    h1.innerHTML = 'Facil';
+}
+
+function hardMode(){
+    window.status = 2;
+    h1.innerHTML = 'Difícil';
+}
 
 //principal function
 function Play(){
+    //easy
+    if(status == 1){
+        
+        button_easy.classList.add('hide');
+        button_hard.classList.add('hide');
+        button_container.classList.remove('Button_container');
+        var father = button.parentNode;
+        father.removeChild(button);
+        button_container.classList.add('hide');
+        h1.innerHTML = 'Nivel: ' + level;
+        arraySequence = new Array(maxLevel).fill(0).map(sequence => Math.floor(Math.random() * 4));
+        
+        for(let i=0; i<level; i++){
+            setTimeout(() => iluminateSequence(i), 1000 * i);
+        }
 
-    button_container.classList.remove('Button_container');
-    var father = button.parentNode;
-    father.removeChild(button);
-    button_container.classList.add('hide');
-    h1.innerHTML = 'Nivel: ' + level;
-    arraySequence = new Array(maxLevel).fill(0).map(sequence => Math.floor(Math.random() * 4));
-    
-    for(let i=0; i<level; i++){
-        setTimeout(() => iluminateSequence(i), 1000 * i);
+        addEventsOnClickEasy();
+        //hard
+    } else if(status == 2){
+
+        button_easy.classList.add('hide');
+        button_hard.classList.add('hide');
+        button_container.classList.remove('Button_container');
+        var father = button.parentNode;
+        father.removeChild(button);
+        button_container.classList.add('hide');
+        h1.innerHTML = 'Nivel: ' + level;
+        arraySequence = new Array(maxLevel).fill(0).map(sequence => Math.floor(Math.random() * 4));
+
+        for(let i=0; i<level; i++){
+            setTimeout(() => iluminateSequence(i), 1000 * i);
+        }
+
+        addEventsOnClickHard();
+    } else{
+        alert('Especifique el nivel')
     }
-
-    addEventsOnClick();
 }
-
 
 function iluminateSequence(i) {
     
@@ -77,17 +113,17 @@ function iluminateColor(colorClicked){
 }
 
 
-function addEventsOnClick(){
+function addEventsOnClickEasy(){
 
-    red.addEventListener('click', rulesGame);
-    blue.addEventListener('click', rulesGame);
-    green.addEventListener('click', rulesGame);
-    purple.addEventListener('click', rulesGame);
+    red.addEventListener('click', rulesGameEasy);
+    blue.addEventListener('click', rulesGameEasy);
+    green.addEventListener('click', rulesGameEasy);
+    purple.addEventListener('click', rulesGameEasy);
 }
 
 
 
-function rulesGame(ev) {
+function rulesGameEasy(ev) {
 
     const colorClicked = ev.target.dataset.color
     iluminateColor(colorClicked);
@@ -131,6 +167,53 @@ function colosIntoNumbers(colorClicked) {
         case 'blue': return 1;
         case 'green': return 2;
         case 'purple': return 3;
+    }
+}
+
+//When de level is hard
+function addEventsOnClickHard() {
+    red.addEventListener('click', rulesGameHard);
+    blue.addEventListener('click', rulesGameHard);
+    green.addEventListener('click', rulesGameHard);
+    purple.addEventListener('click', rulesGameHard);
+} 
+
+function rulesGameHard(ev) {
+    const colorClicked = ev.target.dataset.color
+    iluminateColor(colorClicked);
+    var colorNumber = colosIntoNumbers(colorClicked); 
+
+    /*sublevel represents the position of the number in the array and also
+    verify if the color clicked is the correct one*/
+    if(colorNumber === arraySequence[sublevel]){
+        sublevel++
+        band = 1;
+    } else{
+        alert('Perdió :(');
+        location.reload();
+    }
+    //band is to control wich code is running and wich not
+    if(band === 1){
+
+        if(sublevel === level){
+            level++
+            if(level === maxLevel + 1){
+                alert('Has ganado!!! toma un ss y compártelo');
+                location.reload();
+            } else{
+                //When you pass to the next level this happens
+                band = 0;
+                sublevel = 0;
+                //this is de diference
+                arraySequence = new Array(maxLevel).fill(0).map(sequence => Math.floor(Math.random() * 4));
+                setTimeout(function nextSequence (){
+                    for(let i=0; i<level; i++){
+                        setTimeout(() => iluminateSequence(i), 1000 * i);
+                    }
+                }, 1000);
+                h1.innerHTML = 'Nivel: ' + level;
+            }
+        }
     }
 }
 
