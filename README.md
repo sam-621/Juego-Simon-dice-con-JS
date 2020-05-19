@@ -1,5 +1,13 @@
-# Juego-Simon-dice-con-JS
+# Simón dice con js
+A project made in order to start to learn js, HTML and CSS
 
-Este es un juego creado por Rogelio Samuel Moreno Corrales.
+## File structure
+- Estilos.css All styles of the game
+- Index.html The structure of the game
+- Funcion.js All the logic for the game
 
-El juego consiste en repetir una serie de colores que se van iluminando. En el nivel 1 se iluma un color y tú debes de pulsar ese color, el el 2do nivel se iluman dos colores en el 3er nivel se iluminan 3 colores y así consecutivamente hasta llegar al nivel 10 
+## Rules of the game
+There is a sequence of colors and you have to repeat it. In the first level, the sequence is only 1 color, in level 2, 2 colors and so on
+
+## Preview
+If you want to play this game you can check this link [Game](https://rogeliosamuel621.github.io/Juego-Simon-dice-con-JS/index.html)
